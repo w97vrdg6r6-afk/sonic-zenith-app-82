@@ -9,8 +9,8 @@ interface LibraryProps {
 
 const Library = ({ onSongPlay }: LibraryProps) => {
   return (
-    <div className="space-y-8 pb-32">
-      <h1 className="text-4xl font-bold">Your Library</h1>
+    <div className="space-y-6 md:space-y-8 pb-[180px] md:pb-32">
+      <h1 className="text-3xl md:text-4xl font-bold">Your Library</h1>
 
       <Tabs defaultValue="all" className="w-full">
         <TabsList className="bg-secondary">
@@ -19,24 +19,24 @@ const Library = ({ onSongPlay }: LibraryProps) => {
           <TabsTrigger value="liked">Liked Songs</TabsTrigger>
         </TabsList>
         
-        <TabsContent value="all" className="mt-6">
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 gap-4">
+        <TabsContent value="all" className="mt-4 md:mt-6">
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 gap-3 md:gap-4">
             {songs.map((song) => (
               <SongCard key={song.id} song={song} onPlay={onSongPlay} />
             ))}
           </div>
         </TabsContent>
         
-        <TabsContent value="recent" className="mt-6">
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 gap-4">
+        <TabsContent value="recent" className="mt-4 md:mt-6">
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 gap-3 md:gap-4">
             {songs.slice(0, 6).map((song) => (
               <SongCard key={song.id} song={song} onPlay={onSongPlay} />
             ))}
           </div>
         </TabsContent>
         
-        <TabsContent value="liked" className="mt-6">
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 gap-4">
+        <TabsContent value="liked" className="mt-4 md:mt-6">
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 gap-3 md:gap-4">
             {songs.slice(3, 9).map((song) => (
               <SongCard key={song.id} song={song} onPlay={onSongPlay} />
             ))}

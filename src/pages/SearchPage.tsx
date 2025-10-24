@@ -23,20 +23,20 @@ const SearchPage = ({ onSongPlay }: SearchPageProps) => {
   }, [searchQuery]);
 
   return (
-    <div className="space-y-8 pb-32">
-      <div className="space-y-6">
-        <h1 className="text-4xl font-bold">Search</h1>
+    <div className="space-y-6 md:space-y-8 pb-[180px] md:pb-32">
+      <div className="space-y-4 md:space-y-6">
+        <h1 className="text-3xl md:text-4xl font-bold">Search</h1>
         <SearchBar value={searchQuery} onChange={setSearchQuery} />
       </div>
 
       {searchQuery ? (
         <section>
-          <h2 className="text-2xl font-bold mb-6">
+          <h2 className="text-xl md:text-2xl font-bold mb-4 md:mb-6">
             {filteredSongs.length > 0
               ? `Found ${filteredSongs.length} result${filteredSongs.length !== 1 ? 's' : ''}`
               : 'No results found'}
           </h2>
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 gap-4">
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 gap-3 md:gap-4">
             {filteredSongs.map((song) => (
               <SongCard key={song.id} song={song} onPlay={onSongPlay} />
             ))}
@@ -44,8 +44,8 @@ const SearchPage = ({ onSongPlay }: SearchPageProps) => {
         </section>
       ) : (
         <section>
-          <h2 className="text-2xl font-bold mb-6">Browse All</h2>
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 gap-4">
+          <h2 className="text-xl md:text-2xl font-bold mb-4 md:mb-6">Browse All</h2>
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 gap-3 md:gap-4">
             {songs.map((song) => (
               <SongCard key={song.id} song={song} onPlay={onSongPlay} />
             ))}

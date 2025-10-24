@@ -9,7 +9,7 @@ interface SongCardProps {
 
 const SongCard = ({ song, onPlay }: SongCardProps) => {
   return (
-    <div className="group relative bg-card/50 backdrop-blur-glass border border-glass-border rounded-lg p-4 hover:bg-card/80 transition-all duration-300 hover:shadow-card cursor-pointer animate-fade-in">
+    <div className="group relative bg-card/50 backdrop-blur-glass border border-glass-border rounded-lg p-3 md:p-4 hover:bg-card/80 transition-all duration-300 hover:shadow-card cursor-pointer animate-fade-in">
       <div className="relative mb-4 aspect-square overflow-hidden rounded-md">
         <img
           src={song.coverUrl}
@@ -28,8 +28,8 @@ const SongCard = ({ song, onPlay }: SongCardProps) => {
       </div>
       
       <div className="space-y-1">
-        <h3 className="font-semibold truncate">{song.title}</h3>
-        <p className="text-sm text-muted-foreground truncate">{song.artist}</p>
+        <h3 className="font-semibold truncate text-sm md:text-base">{song.title}</h3>
+        <p className="text-xs md:text-sm text-muted-foreground truncate">{song.artist}</p>
         <p className="text-xs text-muted-foreground">{song.duration}</p>
       </div>
     </div>

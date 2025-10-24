@@ -20,7 +20,7 @@ const PlaylistDetail = ({ onSongPlay }: PlaylistDetailProps) => {
   }
 
   return (
-    <div className="space-y-8 pb-32">
+    <div className="space-y-6 md:space-y-8 pb-[180px] md:pb-32">
       {/* Playlist Header */}
       <div className="flex flex-col md:flex-row gap-6 items-start md:items-end bg-gradient-to-b from-card/80 to-transparent p-8 rounded-xl">
         <img

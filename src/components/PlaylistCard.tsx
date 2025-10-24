@@ -12,7 +12,7 @@ const PlaylistCard = ({ playlist }: PlaylistCardProps) => {
 
   return (
     <div 
-      className="group relative bg-card/50 backdrop-blur-glass border border-glass-border rounded-lg p-4 hover:bg-card/80 transition-all duration-300 hover:shadow-card cursor-pointer animate-fade-in"
+      className="group relative bg-card/50 backdrop-blur-glass border border-glass-border rounded-lg p-3 md:p-4 hover:bg-card/80 transition-all duration-300 hover:shadow-card cursor-pointer animate-fade-in"
       onClick={() => navigate(`/playlist/${playlist.id}`)}
     >
       <div className="relative mb-4 aspect-square overflow-hidden rounded-md">
@@ -35,8 +35,8 @@ const PlaylistCard = ({ playlist }: PlaylistCardProps) => {
       </div>
       
       <div className="space-y-1">
-        <h3 className="font-semibold truncate">{playlist.name}</h3>
-        <p className="text-sm text-muted-foreground line-clamp-2">{playlist.description}</p>
+        <h3 className="font-semibold truncate text-sm md:text-base">{playlist.name}</h3>
+        <p className="text-xs md:text-sm text-muted-foreground line-clamp-2">{playlist.description}</p>
         <p className="text-xs text-muted-foreground">{playlist.songs.length} songs</p>
       </div>
     </div>

@@ -27,7 +27,7 @@ const App = () => {
         <BrowserRouter>
           <div className="flex min-h-screen w-full bg-background text-foreground">
             <Sidebar />
-            <main className="flex-1 p-8 overflow-y-auto">
+            <main className="flex-1 p-4 md:p-8 overflow-y-auto">
               <Routes>
                 <Route path="/" element={<Home onSongPlay={setCurrentSong} />} />
                 <Route path="/search" element={<SearchPage onSongPlay={setCurrentSong} />} />
